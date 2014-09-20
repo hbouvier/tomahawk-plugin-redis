@@ -3,10 +3,12 @@ var store = require('../lib/store.js')();
 store.connect('redis://localhost:6379/1');
 
 function testKV(next) {
-	store.set([{key:'name', value:'Bob Smith'}], function (err, result) {
+	store.set([{key:'name', value:'Bob Smith'}], function (err, value) {
+		console.log('set name "Bob Smith": err:', err, ', value:', value);
 		store.get('name', function (err, value) {
-	    	console.log('value:', value);
-		    store.del('name', function (err) {
+			console.log('get name: err:', err, ', value:', value);
+		    store.del('name', function (err, value) {
+				console.log('del name: err:', err, ', value:', value);
 		    	next();
 		    });
 	   });
