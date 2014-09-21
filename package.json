@@ -1,10 +1,10 @@
 {
   "name": "tomahawk-plugin-redis",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Tomahawk plugin to impletem a Key Value Pair Store backed by Redis",
   "main": "lib/store.js",
   "bin": {
-    "kv-store-plugin": "./bin/redis-plugin"
+    "redis-plugin": "./bin/redis-plugin"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
